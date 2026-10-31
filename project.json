@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "openast",
   "modality": "sight",
-  "status": "design-scaffold",
-  "implemented": false,
+  "status": "experimental-local-prototype",
+  "implemented": true,
   "adapter_contract": "https://github.com/ketanbj/open-modality-trust/blob/main/spec/adapter-contract.md"
 }

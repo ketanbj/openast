@@ -1,5 +1,9 @@
-# Adapter implementation scope
+# Implementation map
 
-Reserved for signed visual codes, camera/display challenges, scene/claim binding and audio/visual handoffs. This is a source-layout scaffold, not a Python package or
-an implemented API. Capture, structured decoding, challenge exchange, binding,
-and common-record conversion will be added alongside actual tests.
+- `protocol.py`: request-bound signed display response and exact statement appraisal.
+- `visual.py`: QR raster encoding, ZXing decoding and bounded image/compression input.
+- `cli.py`: runnable local demo and unauthenticated public-evidence decoder.
+- `modality_trust` (umbrella `core/`): permission, replay and durable local receipts.
+
+The decoder does not authenticate the signer; the gateway does. A signed statement
+does not authenticate neighboring content, the full image, location or proximity.

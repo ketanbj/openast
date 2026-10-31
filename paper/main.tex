@@ -1,0 +1,35 @@
+\documentclass[letterpaper,twocolumn,10pt]{article}
+\usepackage{iftex}
+\ifXeTeX
+  \makeatletter
+  \@namedef{ver@breakurl.sty}{2026/10/30 Native XeTeX URL handling}
+  \makeatother
+\fi
+\usepackage{hyperref}
+\usepackage{usenix}
+\usepackage{xurl}
+\ifXeTeX
+  \microtypesetup{spacing=false,kerning=false}
+\fi
+\usepackage{amsmath,amssymb,booktabs,tabularx,graphicx}
+\input{artifacts/measurements}
+\title{OpenAST: Binding Signed Visual Claims to Exact Agent Actions}
+\author{Research draft\\Authorship to be finalized}
+\date{October 31, 2026}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+Visual interfaces expose useful claims without automatically exposing the authority to act on them. We present OpenAST, a local Python reference that carries a challenge-bound signed statement through an actual QR raster and requires separate exact-action permission before a durable local receipt. The implementation bounds image and structured inputs, preserves explicit assumptions, and rejects unsupported proximity and consent requirements. Generated-image trials and finite attack schedules are reproduced from recorded JSON and source hashes. Severe blur and downsampling expose channel limits; an equally expressive typed-policy control matches the serial authorization decisions. The work establishes a runnable experimental artifact and its boundaries, not physical scene authentication, a formal proof, agent-level prompt-injection resistance or a new cryptographic primitive.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/model}
+\input{sections/alternatives}
+\input{sections/design}
+\input{sections/evaluation}
+\input{sections/discussion}
+\bibliographystyle{plainurl}
+\bibliography{references}
+\appendix
+\input{sections/appendix}
+\end{document}

@@ -1,0 +1,31 @@
+{
+  "review_date": "2026-10-31",
+  "status": "compiled-and-render-inspected-research-draft",
+  "pages": 5,
+  "visual_review": "All pages rendered with PyMuPDF; full contact sheets and detail pages inspected; no clipping or overlap; figures sized for readable labels.",
+  "template": "Unmodified USENIX style from OpenAVT; no submission or acceptance asserted.",
+  "benchmark_report_sha256": "13cd10a9e9414098a77496eac57022bb3d4b549cbacdebf4c58e462e401bfd2a",
+  "security_observations": 600,
+  "unauthorized_new_local_receipts": 0,
+  "typed_control_disagreements": 0,
+  "physical_trials": false,
+  "llm_trials": false,
+  "formal_proof": false,
+  "files_sha256": {
+    "artifacts/channel-table.tex": "931783ad27c364d60d39acf5b79a96fde41a3fc4061641ecd044efd0ef1cb39a",
+    "artifacts/channel.pdf": "503fc40cbf5bcaf8446f1198ed709dd9f354033aaab85f3740fbd4e5ad220f1a",
+    "artifacts/channel.png": "249982c4eeb5de668b33f67b71f2fe74e1be7b8fec06376b3ead68831cda4abf",
+    "artifacts/measurements.tex": "d478d6eb75359be887253e198ef0d1a92b2b5ba941bd6c7386c666ce9b96f7c5",
+    "main.tex": "cb2463b0690ec40d6337be205dacfab6ad44252dbe322f6cd3051b3f020305ad",
+    "openast.pdf": "c52b4081cb2e0e2a0cfe90e27fbb9722e36209bda53d6a2a753876f00ceba4d3",
+    "references.bib": "d352cda4a03983e416d614a4918e26d798dd94f44634ae2d065208f76339776a",
+    "sections/alternatives.tex": "47be4d444dbe608923a917f09207bc4e458d6dffe67e1093695ee75b0d11f927",
+    "sections/appendix.tex": "c1c6d0cef6385c6da7474ce46ec29d109914bae94691e7b5a176951e86997383",
+    "sections/design.tex": "8e038842e4c11f8bdef358afc58890075e06ae91510bd7b4a0d1ac3e3276c092",
+    "sections/discussion.tex": "9c1a2df63e075a56d75de6927ea813a58b2659364f70d6d0fbd456c32d634048",
+    "sections/evaluation.tex": "03d1cb6d31f757145fe6a5e940de630e6d46db12a0a1b719804015ea4e727bff",
+    "sections/introduction.tex": "0fa3e46db6fa61ad6dfba83493d684c89f48864825a6bbedb812d5af312520d4",
+    "sections/model.tex": "b8e8ffa7bcf2888dd40659f1dfbcdf5b0e04d9f014d108cb17810ac704697830",
+    "usenix.sty": "2278c83173e084a00fcf76d3227acb971f5137ecea993a5b4e13a9b2bd67b45e"
+  }
+}
