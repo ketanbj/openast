@@ -1,0 +1,28 @@
+\section{Alternatives and Research Position}
+Visual authentication is established. Seeing-Is-Believing used two-dimensional
+barcodes and camera phones for authentication and demonstrative identification
+of devices~\cite{sib}. QRLogin research studies the complete login workflow and
+finds failures beyond decoding~\cite{qrlogin}; pQRAuth adds a physical pose
+factor~\cite{pqrauth}. OpenAST does not reproduce those deployment studies,
+provide their physical factor or claim that signed visual codes are new.
+
+An authenticated web API with transaction-bound permission can already satisfy
+many OpenAST requirements. A static signed marker can establish issuer identity
+and message integrity but needs additional context for freshness and action
+scope. A challenge response improves interaction binding while still admitting
+live relay. A pose, distance-bounding or trusted-location mechanism would add
+separate evidence, not a stronger interpretation of the same QR signature.
+
+RATS distinguishes evidence, appraisal and relying-party decisions~\cite{rats}.
+CaMeL and Fides place capability or information-flow policies around agent
+execution~\cite{camel,fides}. OpenAST follows the same architectural discipline;
+it is not an implementation of their planners and cannot claim their measured
+agent security. AgentDojo offers a foundation for future model-driven
+experiments~\cite{agentdojo}, whereas the present suite contains no model.
+
+The current contribution is an artifact and explicit interface contract.
+Demonstrating a new cross-modal composition theorem, a reduction in evidence
+exchanges or improved useful autonomy against equally expressive controls remains
+future research. A common API or a collection of familiar checks is not, by
+itself, that scientific contribution.
+

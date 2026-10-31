@@ -1,0 +1,68 @@
+\section{Design and Implementation}
+\subsection{Challenge to display to receipt}
+The business first stores a challenge for an immutable action. The display's
+\texttt{respond} routine checks its lifetime and request digest, constructs a
+resource name plus statement digest and signs the challenge/observation pair.
+The gateway independently checks that the statement digest equals the value in
+the proposed action. This prevents endorsing one visible claim and applying it
+to an unrelated operation.
+
+The QR transport compresses the public signed envelope with zlib and encodes it
+as a prefixed Base85 string. The profile caps visual text at 2,000 characters and
+uses QR medium error correction with a four-module quiet zone. Default generated
+markers use six pixels per module. QR generation uses the \texttt{qrcode} package;
+ZXing performs decoding. OpenCV is used only to generate benchmark perspective
+transformations. Encoding and decoding do not themselves authenticate a signer.
+
+The image boundary limits encoded input to 8 MiB, total pixels to four million,
+and either dimension to 4,096 pixels, rejecting animation and tiny inputs. The
+inflater separately limits output to 32 KiB and rejects incomplete streams,
+trailing data and compression bombs. When multiple QR symbols are decoded, the
+adapter rejects ambiguity. It cannot guarantee discovery of every hidden or
+undecodable marker, and native image libraries remain attack surface.
+
+The observation contains no scene description or inferred location. Neighboring
+text never enters the signature appraisal. This prevents authority propagation
+inside this path; it does not control an independent model reading that text or
+using another tool. Neither the QR payload nor its surrounding image is encrypted.
+\subsection{Acceptance and transaction boundary}
+For evidence $e$, grant $g$ and action $a$, the intended rule is
+\begin{align}
+\mathsf{Receipt}(a) \Rightarrow {}& \mathsf{SignatureValid}(e) \nonumber\\
+ &\land\ \mathsf{ChallengeStoredAndUnused}(e,h(a)) \nonumber\\
+ &\land\ \mathsf{ScopeAndTimeValid}(g,a) \nonumber\\
+ &\land\ \mathsf{Supported}(e,\mathsf{Contract}(a)) \nonumber\\
+ &\land\ \mathsf{CurrentAndUnused}(g).
+\end{align}
+This is a design invariant supported by finite tests, not a mechanized proof.
+The gateway derives supported guarantees from its own validators. A signed
+adapter field such as \texttt{trusted=true} is rejected as an unknown field.
+Unsupported requirements such as physical proximity or human consent cannot be
+supplied by relabeling a valid signature.
+
+Cryptographic and modality appraisal precede a SQLite \texttt{BEGIN IMMEDIATE}
+transaction. After acquiring the write lock, the gateway rechecks time, issuer
+revocation, complete stored challenge and grant state. Receipt insertion and
+challenge/grant consumption then commit together. An insertion failure rolls
+back consumption; restarts retain replay state. Revocation committed before this
+boundary prevents a later receipt. Revocation after an already committed receipt
+cannot undo history.
+
+The sole effect is an append to this local receipt ledger. There is no callback
+that silently sends a remote command inside this claim. A payment, actuator,
+message, downstream database or later physical event needs its own participating
+commit semantics. The usual database transaction is an implementation foundation,
+not a novel consistency mechanism.
+
+\subsection{Bounded parsing and role separation}
+The shared package signs a versioned kind/issuer/body envelope using
+domain-separated Ed25519~\cite{eddsa}. The local JSON profile permits bounded
+integers, strings, arrays, objects, booleans and null, with sorted ASCII-escaped
+keys and fixed separators. It rejects duplicate keys, floats, nonfinite values,
+excessive nesting, large messages, unknown fields and boolean timestamps. The
+maximum encoded message is 32 KiB. These choices reduce parser ambiguity; they
+are not JOSE, COSE, RFC 8785 or compatibility with the umbrella's draft schema.
+Evidence trust maps are scoped by modality; a display key cannot act as a
+controller without explicit configuration. The private keys never appear in released reports. Evidence is signed, not
+encrypted; public claims and tactile traces must not contain secrets.
+

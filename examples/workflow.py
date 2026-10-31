@@ -15,7 +15,7 @@ with tempfile.TemporaryDirectory() as directory:
     gateway = Gateway(
         str(Path(directory) / "state.sqlite3"),
         audience="business",
-        attesters={"display": display.public_key},
+        attesters={"sight": {"display": display.public_key}},
         delegators={"owner": owner.public_key},
         clock=lambda: now,
     )

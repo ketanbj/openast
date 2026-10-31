@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "measurement_trial": false,
+  "public_key_hex": "540b71e9784b4e3f9e81daf6f06272f0aec4883e28fe82db37a7c9043a0875c9",
+  "action": {
+    "action": "record",
+    "arguments": {
+      "statement_digest": "e1a0c840b74cb5e683000ce0f5e753bff4ac9b844bacd242a7bd6fe7db0f393c"
+    },
+    "principal": "fixture-agent",
+    "purpose": "fixture",
+    "resource": "order/fixture-42"
+  },
+  "statement": {
+    "order": "fixture-42",
+    "status": "ready"
+  },
+  "evidence": {
+    "protected": {
+      "body": {
+        "challenge": {
+          "audience": "fixture-backend",
+          "expires_at": 1030,
+          "issued_at": 1000,
+          "modality": "sight",
+          "nonce": "synthetic-visual-nonce",
+          "request_digest": "b67d78d1296701d018191f2e3f048746c0094f5e5d86589e5bb86331dd4bc75d",
+          "session": "synthetic-visual-session",
+          "v": 1
+        },
+        "observation": {
+          "profile": "signed-qr-v1",
+          "resource": "order/fixture-42",
+          "statement_digest": "e1a0c840b74cb5e683000ce0f5e753bff4ac9b844bacd242a7bd6fe7db0f393c"
+        }
+      },
+      "issuer": "fixture-display",
+      "kind": "sight-evidence",
+      "v": 1
+    },
+    "signature": "WGtJQpiNt3UgZWeE9ZPTJLRNiu/cPitHU855bW9ovVfXBdkebtMb9Sas/kjf1vJCc4HGELdU3gFogLV7TQEKAw=="
+  }
+}

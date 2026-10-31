@@ -5,13 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "openast"
 version = "0.1.0"
+readme = "README.md"
+license-files = ["LICENSE"]
 description = "Experimental challenge-bound signed visual evidence for agent actions"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 dependencies = ["open-modality-trust-core==0.1.0", "qrcode[pil]>=8,<9", "zxing-cpp>=2.3,<4", "numpy>=2,<3"]
 
 [project.optional-dependencies]
-benchmark = ["opencv-python-headless>=4.10,<5"]
+benchmark = ["opencv-python-headless>=4.10,<5", "matplotlib>=3.9,<4"]
 
 [project.scripts]
 openast = "openast.cli:main"

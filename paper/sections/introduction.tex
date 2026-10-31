@@ -1,0 +1,34 @@
+\section{Introduction}
+An agent at a pickup kiosk can read an order status, a nearby sign and an
+attacker's overlay through the same camera. Correctly decoding a machine-readable
+marker does not establish who issued its claim, which interaction it belongs to,
+or whether its owner authorized the agent's proposed action. Even a valid signed
+response can be copied to another display or relayed from another location.
+Treating the entire camera view as authoritative because one fragment verifies
+therefore strengthens the evidence without justification.
+
+OpenAST (Open Agent Sight Trust) implements a narrow alternative. A participating
+display signs the exact requested statement and a challenge bound to the agent's
+complete proposed action. The signed evidence travels through an actual QR raster
+and is decoded independently of surrounding text. A separate owner grant and
+trusted gateway determine whether that action can create a durable local receipt.
+A successful exchange supports issuer-key control, message integrity, a fresh
+signed response and exact request binding. It does not establish scene truth,
+physical location, proximity or consent.
+
+This separation is useful when an agent must use a human-facing display rather
+than a compatible authenticated API. If an appropriate API already supplies the
+claim and permission, it may be the better integration. OpenAST is not a reason
+to replace a sufficient API with a QR channel. Its scope is an inspectable
+reference for the interface-to-action boundary.
+
+\paragraph{What this report establishes.}
+We provide a runnable Python visual adapter, shared permission gate, real QR
+encoding/decoding, finite attack cases, generated-image reliability trials and
+explicit negative results. We compare with both a signature-only ablation and a
+control implementing the same serial policy. Agreement with the stronger control
+limits the novelty claim: no additional authorization property is demonstrated.
+The open research question is how scoped evidence can later compose across voice,
+sight and touch while avoiding unnecessary acquisition. That larger mechanism
+is not implemented or proved here.
+

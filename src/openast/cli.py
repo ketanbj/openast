@@ -28,7 +28,7 @@ def demo(directory: Path):
         gateway = Gateway(
             str(Path(temporary) / "state.sqlite3"),
             audience="pickup.demo",
-            attesters={display.issuer: display.public_key},
+            attesters={"sight": {display.issuer: display.public_key}},
             delegators={owner.issuer: owner.public_key},
         )
         challenge = gateway.challenge(action, "sight")
