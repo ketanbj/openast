@@ -1,10 +1,7 @@
-# Open Agent Sight Trust: design boundaries
+# Design status
 
-Planned work covers signed visual codes, camera/display challenges, scene/claim binding and audio/visual handoffs.
+The original design scaffold is implemented as a bounded local prototype.
+See [architecture](architecture.md), [threat model](threat-model.md),
+[novelty boundaries](novelty.md), and [benchmarks](benchmarks/README.md).
 
-A valid marker or fresh response does not prove scene truth, display location, or proximity; live relay and relocated tags must remain explicit.
-
-The adapter should produce explicitly scoped evidence records, not an unrestricted
-trust flag. A future verifier must independently appraise proofs, scope,
-freshness and assumptions. The language model cannot grant itself authority.
-Implementation choices and proof formats remain open research questions.
+A valid QR response does not prove the truth of the surrounding scene, display location, proximity or human consent.

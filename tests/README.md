@@ -1,6 +1,6 @@
-# Test plan
+# Tests
 
-Future tests must cover malformed inputs, substituted claims/resources, replay,
-wrong interaction context and missing evidence. A valid marker or fresh response does not prove scene truth, display location, or proximity; live relay and relocated tags must remain explicit.
-
-No security tests have run because no adapter protocol is implemented yet.
+Run `python -m pytest tests` from this repository after installing the package
+and its local shared core. Tests cover the actual modality parser and protocol.
+The umbrella `core/tests` adds permission, replay, transaction, concurrency and
+unsupported-guarantee cases. Benchmark runners record separate raw measurements.

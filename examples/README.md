@@ -1,6 +1,10 @@
-# Example roadmap
+# Runnable example
 
-First implement an offline signed-code baseline, then a live two-way
-camera/display challenge, then a voice-to-sight handoff with OpenAVT. Keep
-neighboring text untrusted. Publish angle/lighting/blur/occlusion and live-relay
-conditions with results. These are planned examples, not runnable demos.
+`workflow.py` exercises the public OPENAST SDK and shared gateway.
+Run from the repository family after installing the local packages:
+
+```sh
+python openast/examples/workflow.py
+```
+
+Inputs are generated local fixtures, not hardware or a production customer flow.
